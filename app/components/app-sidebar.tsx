@@ -7,27 +7,27 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar'
 
 // Menu items.
 const items = {
   main: [
     {
-      title: "Home",
-      url: "#",
+      title: 'Home',
+      url: '#',
     },
   ],
   converters: [
     {
-      title: "JPG to PNG",
-      url: "#",
+      title: 'JPG to PNG',
+      url: '#',
     },
     {
-      title: "PNG to SVG",
-      url: "#",
+      title: 'PNG to SVG',
+      url: '#',
     },
   ],
-};
+}
 
 export function AppSidebar() {
   return (
@@ -68,5 +68,5 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  );
+  )
 }
