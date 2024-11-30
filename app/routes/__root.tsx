@@ -39,11 +39,11 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html>
+    <html className="dark">
       <head>
         <Meta />
       </head>
-      <body className="dark flex flex-col w-full h-screen">
+      <body className="flex flex-col w-full h-screen">
         <SidebarProvider>
           {children}
           <ScrollRestoration />
