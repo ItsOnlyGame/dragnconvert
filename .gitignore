@@ -4,3 +4,4 @@ dist/
 
 # Files
 .env
+app/routeTree.gen.ts
