@@ -1,5 +1,3 @@
-import { useConverter } from '@/hooks/use-converter'
-import { useDownload } from '@/hooks/use-download'
 import { Layout } from '@/layouts/layout'
 import { createFileRoute } from '@tanstack/react-router'
 
@@ -8,17 +6,6 @@ export const Route = createFileRoute('/')({
 })
 
 function Home() {
-  const { download } = useDownload()
-  const { convertToPng } = useConverter()
-
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || e.target.files.length == 0) {
-      return
-    }
-
-    download(convertToPng, e.target.files)
-  }
-
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center w-full h-full gap-8">
