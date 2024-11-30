@@ -8,23 +8,31 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import { FileRoutesByTo } from '@/routeTree.gen'
+import { Link } from '@tanstack/react-router'
 
+type LinkItems = {
+  [category: string]: {
+    title: string
+    url: keyof FileRoutesByTo
+  }[]
+}
 // Menu items.
-const items = {
+const items: LinkItems = {
   main: [
     {
       title: 'Home',
-      url: '#',
+      url: '/',
     },
   ],
   converters: [
     {
       title: 'JPG to PNG',
-      url: '#',
+      url: '/jpg-to-png',
     },
     {
       title: 'PNG to SVG',
-      url: '#',
+      url: '/png-to-jpg',
     },
   ],
 }
@@ -40,9 +48,7 @@ export function AppSidebar() {
               {items.main.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <span>{item.title}</span>
-                    </a>
+                    <Link to={item.url}>{item.title}</Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -57,9 +63,7 @@ export function AppSidebar() {
               {items.converters.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <span>{item.title}</span>
-                    </a>
+                    <Link to={item.url}>{item.title}</Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
