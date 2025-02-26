@@ -1,7 +1,25 @@
-# Directories
-node_modules/
-dist/
+# Local
+.DS_Store
+*.local
+*.log*
 
-# Files
+# Dist
+node_modules
+dist/
+.vinxi
+.output
+.vercel
+.netlify
+.wrangler
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Enviroment
 .env
-app/routeTree.gen.ts
+.env.*
+
+# Misc
+routeTree.gen.ts
