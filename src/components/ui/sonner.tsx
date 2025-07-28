@@ -1,11 +1,11 @@
 import { cva } from 'class-variance-authority'
 import { CircleCheckIcon, CircleXIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import {
   Toaster as Sonner,
   toast as sonnerToast,
   type ToasterProps,
 } from 'sonner'
+import { useTheme } from '../theme-provider'
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = 'system' } = useTheme()
