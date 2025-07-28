@@ -14,6 +14,7 @@ export { action, loader } from 'react-router-theme'
 import type { Route } from './+types/root'
 import './app.css'
 
+import { Toaster } from 'sonner'
 import { ThemeContext } from './components/theme-context'
 import { SidebarProvider } from './components/ui/sidebar'
 
@@ -61,6 +62,7 @@ export default function App() {
   return (
     <SidebarProvider>
       <Outlet />
+      <Toaster />
     </SidebarProvider>
   )
 }
