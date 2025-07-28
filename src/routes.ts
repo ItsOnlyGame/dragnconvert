@@ -9,7 +9,7 @@ export default [
   index('routes/index.tsx'),
 
   layout('routes/layout.tsx', [
-    route('/jpg-to-png', 'routes/converters/jpg-to-png.tsx'),
-    route('/png-to-jpg', 'routes/converters/png-to-jpg.tsx'),
+    route('/to-jpg', 'routes/converters/convert-to-jpg.tsx'),
+    route('/to-png', 'routes/converters/convert-to-png.tsx'),
   ]),
 ] satisfies RouteConfig

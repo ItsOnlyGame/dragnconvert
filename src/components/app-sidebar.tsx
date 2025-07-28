@@ -27,11 +27,11 @@ const items: LinkItems = {
   converters: [
     {
       title: 'JPG to PNG',
-      url: '/jpg-to-png',
+      url: '/to-png',
     },
     {
       title: 'PNG to JPG',
-      url: '/png-to-jpg',
+      url: '/to-jpg',
     },
   ],
 }
