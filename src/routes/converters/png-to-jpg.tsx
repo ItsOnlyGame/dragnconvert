@@ -1,29 +1,35 @@
-import { ConvertPage } from "~/components/convert-page";
-import { useConverter } from "~/hooks/use-converter";
-import { useDownload } from "~/hooks/use-download";
+import { useState } from 'react'
+import { FileConvert } from '~/components/convertion/file-convert'
+import { Input } from '~/components/ui/input'
+import { Label } from '~/components/ui/label'
+import { toJPG } from '~/converters/to-jpg'
+import { useConvert } from '~/hooks/use-convert'
 
 export default function RouteComponent() {
-  const { download } = useDownload();
-  const { convertToJPG } = useConverter();
+  const [quality, setQuality] = useState<number>(0.9)
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || e.target.files.length == 0) {
-      return;
-    }
-
-    const filesArray = Array.from(e.target.files);
-    const convertedFiles = await Promise.all(
-      filesArray.map((file) => convertToJPG(file, 0.9)),
-    );
-
-    download(convertedFiles);
-  };
+  const { convert, isLoading } = useConvert({
+    convertionFunction: (file) => toJPG(file, quality),
+  })
 
   return (
-    <ConvertPage
-      title="PNG to JPG converter"
-      handleUpload={handleUpload}
-      fileTypes=".png"
-    />
-  );
+    <>
+      <h2 className="text-bold text-2xl">PNG to JPG converter</h2>
+      <FileConvert handleConvert={convert} isLoading={isLoading}>
+        <div className="flex w-full flex-col gap-2">
+          <Label htmlFor="jpg-quality">JPG Quality</Label>
+          <Input
+            id="jpg-quality"
+            type="number"
+            step={0.1}
+            min={0.1}
+            max={1}
+            value={quality}
+            onChange={(e) => setQuality(parseFloat(e.target.value))}
+            placeholder="Quality (0.1 - 1)"
+          />
+        </div>
+      </FileConvert>
+    </>
+  )
 }

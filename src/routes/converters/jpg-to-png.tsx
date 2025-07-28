@@ -1,29 +1,27 @@
-import { ConvertPage } from "~/components/convert-page";
-import { useConverter } from "~/hooks/use-converter";
-import { useDownload } from "~/hooks/use-download";
+import { useCallback } from 'react'
+import { FileConvert } from '~/components/convertion/file-convert'
+import { toPNG } from '~/converters/to-png'
+import { useDownload } from '~/hooks/use-download'
 
 export default function RouteComponent() {
-  const { download } = useDownload();
-  const { convertToPNG } = useConverter();
+  const { download } = useDownload()
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || e.target.files.length == 0) {
-      return;
+  const handleConvert = useCallback(async (acceptedFiles: File[]) => {
+    if (acceptedFiles.length === 0) {
+      return
     }
 
-    const filesArray = Array.from(e.target.files);
     const convertedFiles = await Promise.all(
-      filesArray.map((file) => convertToPNG(file)),
-    );
+      acceptedFiles.map((file) => toPNG(file))
+    )
 
-    download(convertedFiles);
-  };
+    download(convertedFiles)
+  }, [])
 
   return (
-    <ConvertPage
-      title="JPG to PNG converter"
-      handleUpload={handleUpload}
-      fileTypes=".jpg,.jpeg"
-    />
-  );
+    <>
+      <h2 className="text-bold text-2xl">JPG to PNG converter</h2>
+      <FileConvert handleConvert={handleConvert} />
+    </>
+  )
 }
