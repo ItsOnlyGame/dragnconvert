@@ -33,6 +33,10 @@ const items: LinkItems = {
       title: 'PNG to JPG',
       url: '/to-jpg',
     },
+    {
+      title: 'Convert to WebP',
+      url: '/to-webp',
+    },
   ],
 }
 
