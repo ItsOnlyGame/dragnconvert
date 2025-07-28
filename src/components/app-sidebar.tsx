@@ -30,7 +30,7 @@ const items: LinkItems = {
       url: '/jpg-to-png',
     },
     {
-      title: 'PNG to SVG',
+      title: 'PNG to JPG',
       url: '/png-to-jpg',
     },
   ],
