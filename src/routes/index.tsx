@@ -1,11 +1,6 @@
-import { DefaultLayout } from '@/layouts/default-layout'
-import { createFileRoute } from '@tanstack/react-router'
+import { DefaultLayout } from "~/layouts/default-layout";
 
-export const Route = createFileRoute('/')({
-  component: HomeComponent,
-})
-
-function HomeComponent() {
+export default function PageComponent() {
   return (
     <DefaultLayout>
       <div className="flex h-full w-full flex-col items-center justify-center gap-8">
@@ -23,5 +18,5 @@ function HomeComponent() {
         </p>
       </div>
     </DefaultLayout>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { ConvertedFile } from './use-converter'
 import FileSaver from 'file-saver'
 import JSZip from 'jszip'
+import { type ConvertedFile } from './use-converter'
 
 async function download(files: ConvertedFile[] | undefined) {
   if (!files || files.length == 0) {

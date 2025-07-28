@@ -1,3 +1,4 @@
+import { Link, type Register } from 'react-router';
 import {
   Sidebar,
   SidebarContent,
@@ -7,14 +8,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/components/ui/sidebar'
-import { FileRoutesByTo } from '@/routeTree.gen'
-import { Link } from '@tanstack/react-router'
+} from '~/components/ui/sidebar';
 
 type LinkItems = {
   [category: string]: {
     title: string
-    url: keyof FileRoutesByTo
+    url: keyof Register["pages"];
   }[]
 }
 // Menu items.

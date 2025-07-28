@@ -1,5 +1,5 @@
-import { DefaultLayout } from '@/layouts/default-layout'
-import { LabelButton } from './ui/label-button'
+import { LabelButton } from '~/components/ui/label-button'
+import { DefaultLayout } from '~/layouts/default-layout'
 
 interface Props {
   title: string

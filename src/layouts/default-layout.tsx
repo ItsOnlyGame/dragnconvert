@@ -1,5 +1,5 @@
-import { AppSidebar } from '@/components/app-sidebar'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+import { AppSidebar } from '~/components/app-sidebar'
 
 interface Props extends PropsWithChildren {
   className?: string
