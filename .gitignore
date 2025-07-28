@@ -1,7 +1,6 @@
-# Directories
-node_modules/
-dist/
+.DS_Store
+/node_modules/
 
-# Files
-.env
-app/routeTree.gen.ts
+# React Router
+/.react-router/
+/build/
