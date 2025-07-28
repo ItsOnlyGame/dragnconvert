@@ -1,4 +1,4 @@
-import { Link, type Register } from 'react-router';
+import { Link, type Register } from 'react-router'
 import {
   Sidebar,
   SidebarContent,
@@ -8,12 +8,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '~/components/ui/sidebar';
+} from '~/components/ui/sidebar'
 
 type LinkItems = {
   [category: string]: {
     title: string
-    url: keyof Register["pages"];
+    url: keyof Register['pages']
   }[]
 }
 // Menu items.
