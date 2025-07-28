@@ -7,6 +7,7 @@ import {
 import { useCallback, useMemo, type Dispatch, type SetStateAction } from 'react'
 import { Button } from '../ui/button'
 import { ScrollArea } from '../ui/scroll-area'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip'
 
 type FileListProps = {
   files: File[]
@@ -30,14 +31,21 @@ export function FileList({ files, setAcceptedFiles }: FileListProps) {
           ))}
         </ul>
       </ScrollArea>
-      <Button
-        size="icon"
-        variant="ghost"
-        className="absolute right-2 bottom-2"
-        onClick={handleRemoveAll}
-      >
-        <Trash2Icon />
-      </Button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="absolute right-2 bottom-2"
+            onClick={handleRemoveAll}
+          >
+            <Trash2Icon />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Remove all files from list</p>
+        </TooltipContent>
+      </Tooltip>
     </div>
   )
 }
