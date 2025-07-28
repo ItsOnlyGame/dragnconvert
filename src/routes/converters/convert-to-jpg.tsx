@@ -14,8 +14,15 @@ export default function RouteComponent() {
 
   return (
     <>
-      <h2 className="text-bold text-2xl">PNG to JPG converter</h2>
-      <FileConvert handleConvert={convert} isLoading={isLoading}>
+      <h2 className="text-bold text-2xl">Convert to JPG</h2>
+      <FileConvert
+        handleConvert={convert}
+        isLoading={isLoading}
+        accept={{
+          'image/png': ['.png'],
+          'image/webp': ['.webp'],
+        }}
+      >
         <div className="flex w-full flex-col gap-2">
           <Label htmlFor="jpg-quality">JPG Quality</Label>
           <Input
