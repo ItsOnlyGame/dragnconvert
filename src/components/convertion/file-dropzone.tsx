@@ -34,6 +34,10 @@ export function FileDropzone({ setAcceptedFiles, accept }: FileDropzoneProps) {
     accept,
   })
 
+  const acceptedFileTypes = Object.keys(accept)
+    .map((str) => str.split('/')[1])
+    .join(', ')
+
   return (
     <div className="flex h-full max-h-[200px] flex-col gap-4">
       <div
@@ -44,9 +48,10 @@ export function FileDropzone({ setAcceptedFiles, accept }: FileDropzoneProps) {
         {isDragActive ? (
           <p className="text-stone-400">Drop the files here ...</p>
         ) : (
-          <p className="text-stone-400">
-            Drag 'n' drop some files here, or click to select files
-          </p>
+          <div className="space-y-2 text-center text-stone-400">
+            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p className="text-sm">{acceptedFileTypes}</p>
+          </div>
         )}
       </div>
     </div>
