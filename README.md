@@ -2,6 +2,8 @@
 
 This app is a simple drag and drop file converter. It allows you to drag a file from your file system and convert it to a different format.
 
+[Demo](https://dragnconvert.j0h.dev/)
+
 ## Features
 
 - Convert files to multiple file formats.
