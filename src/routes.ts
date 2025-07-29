@@ -15,5 +15,6 @@ export default [
     route('/to-png', 'routes/converters/convert-to-png.tsx'),
     route('/to-webp', 'routes/converters/convert-to-webp.tsx'),
     route('/to-mp4', 'routes/converters/convert-to-mp4.tsx'),
+    route('/to-mp3', 'routes/converters/convert-to-mp3.tsx'),
   ]),
 ] satisfies RouteConfig

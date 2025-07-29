@@ -41,6 +41,10 @@ const items: LinkItems = {
       title: 'Convert to MP4',
       url: '/to-mp4',
     },
+    {
+      title: 'Convert to MP3',
+      url: '/to-mp3',
+    },
   ],
 }
 
