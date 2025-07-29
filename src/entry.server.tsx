@@ -18,6 +18,9 @@ export default function handleRequest(
   // If you have middleware enabled:
   // loadContext: unstable_RouterContextProvider
 ) {
+  responseHeaders.set('Cross-Origin-Opener-Policy', 'same-origin')
+  responseHeaders.set('Cross-Origin-Embedder-Policy', 'require-corp')
+
   return new Promise((resolve, reject) => {
     let shellRendered = false
     let userAgent = request.headers.get('user-agent')
