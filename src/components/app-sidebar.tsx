@@ -37,6 +37,10 @@ const items: LinkItems = {
       title: 'Convert to WebP',
       url: '/to-webp',
     },
+    {
+      title: 'Convert to MP4',
+      url: '/to-mp4',
+    },
   ],
 }
 
