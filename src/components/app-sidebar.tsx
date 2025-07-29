@@ -8,6 +8,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from '~/components/ui/sidebar'
 
 type LinkItems = {
@@ -49,6 +50,8 @@ const items: LinkItems = {
 }
 
 export function AppSidebar() {
+  const { toggleSidebar } = useSidebar()
+
   return (
     <Sidebar>
       <SidebarContent>
@@ -59,7 +62,9 @@ export function AppSidebar() {
               {items.main.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link to={item.url}>{item.title}</Link>
+                    <Link onClick={toggleSidebar} to={item.url}>
+                      {item.title}
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -74,7 +79,9 @@ export function AppSidebar() {
               {items.converters.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link to={item.url}>{item.title}</Link>
+                    <Link onClick={toggleSidebar} to={item.url}>
+                      {item.title}
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

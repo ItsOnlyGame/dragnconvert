@@ -24,7 +24,7 @@ export function FileList({ files, setAcceptedFiles }: FileListProps) {
 
   return (
     <div className="relative flex max-w-md flex-col items-start rounded-xl border pb-6">
-      <ScrollArea className="mb-2 h-[500px] w-full p-4">
+      <ScrollArea className="mb-2 h-[200px] w-full p-4 md:h-[500px]">
         <ul className="flex w-full flex-col gap-2">
           {files.map((file) => (
             <ListItem key={file.name} file={file} onRemove={handleRemove} />
