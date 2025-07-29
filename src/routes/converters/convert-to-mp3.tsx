@@ -1,4 +1,5 @@
 import { FileConvert } from '~/components/convertion/file-convert'
+import { PageMeta } from '~/components/page-meta'
 import { useConvert } from '~/hooks/use-convert'
 import { useFFmpeg } from '~/hooks/use-ffmpeg'
 
@@ -12,6 +13,11 @@ export default function RouteComponent() {
 
   return (
     <>
+      <PageMeta
+        title="Convert to MP3"
+        description="Convert audio and video to MP3 format."
+      />
+
       <h2 className="text-bold text-2xl">Convert to MP3</h2>
       <FileConvert
         handleConvert={convert}

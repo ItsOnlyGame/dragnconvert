@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FileConvert } from '~/components/convertion/file-convert'
+import { PageMeta } from '~/components/page-meta'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 import { toJPG } from '~/converters/to-jpg'
@@ -14,6 +15,10 @@ export default function RouteComponent() {
 
   return (
     <>
+      <PageMeta
+        title="Convert to JPG"
+        description="Convert images to JPG format with adjustable quality."
+      />
       <h2 className="text-bold text-2xl">Convert to JPG</h2>
       <FileConvert
         handleConvert={convert}

@@ -31,6 +31,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <title>Drag 'n' Convert</title>
+        <meta property="og:title" content="Drag 'n' Convert" />
+        <meta
+          name="description"
+          content="Drag and convert files to different formats"
+        />
+
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FileConvert } from '~/components/convertion/file-convert'
+import { PageMeta } from '~/components/page-meta'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 import { toWebP } from '~/converters/to-webp'
@@ -14,6 +15,11 @@ export default function RouteComponent() {
 
   return (
     <>
+      <PageMeta
+        title="Convert to WebP"
+        description="Convert images to WebP format."
+      />
+
       <h2 className="text-bold text-2xl">Convert to WebP</h2>
       <FileConvert
         handleConvert={convert}

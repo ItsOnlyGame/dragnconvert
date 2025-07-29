@@ -1,4 +1,5 @@
 import { FileConvert } from '~/components/convertion/file-convert'
+import { PageMeta } from '~/components/page-meta'
 import { useConvert } from '~/hooks/use-convert'
 import { useFFmpeg } from '~/hooks/use-ffmpeg'
 
@@ -12,6 +13,11 @@ export default function RouteComponent() {
 
   return (
     <>
+      <PageMeta
+        title="Convert to MP4"
+        description="Convert video to MP4 format."
+      />
+
       <h2 className="text-bold text-2xl">Convert to MP4</h2>
       <FileConvert
         handleConvert={convert}
