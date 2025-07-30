@@ -36,6 +36,7 @@ const items: SidebarCategory[] = [
       { title: 'Convert to MP4', url: '/to-mp4' },
       { title: 'Convert to MKV', url: '/to-mkv' },
       { title: 'Convert to FLV', url: '/to-flv' },
+      { title: 'Convert to AVI', url: '/to-avi' },
     ],
   },
   {
