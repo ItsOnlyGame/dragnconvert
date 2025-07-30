@@ -57,7 +57,7 @@ export function useFFmpeg() {
 
     const ffmpeg = ffmpegRef.current
 
-    const outputFile = `output.${outputFormat}`
+    const outputFile = inputFile.name.split('.').slice(0, -1).join('.')
 
     await ffmpeg.writeFile(inputFile.name, await fetchFile(inputFile))
     if (type == 'video') {
