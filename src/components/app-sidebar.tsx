@@ -32,7 +32,10 @@ const items: SidebarCategory[] = [
   },
   {
     title: 'Video',
-    items: [{ title: 'Convert to MP4', url: '/to-mp4' }],
+    items: [
+      { title: 'Convert to MP4', url: '/to-mp4' },
+      { title: 'Convert to MKV', url: '/to-mkv' },
+    ],
   },
   {
     title: 'Audio',
