@@ -6,7 +6,7 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  globalIgnores(['node_modules', 'dist']),
+  globalIgnores(['node_modules', 'dist', '.react-router']),
   {
     settings: {
       react: {
