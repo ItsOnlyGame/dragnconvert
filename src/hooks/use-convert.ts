@@ -1,13 +1,35 @@
 import { useCallback, useState } from 'react'
+import { toast } from '~/components/ui/sonner'
 import type { ConvertedFile } from '~/types/converter'
 import { useDownload } from './use-download'
 
 type UseConvertProps = {
   onDone?: () => void
+  onError?: (error: unknown) => void
   convertionFunction: (file: File) => Promise<ConvertedFile>
 }
 
-export function useConvert({ convertionFunction, onDone }: UseConvertProps) {
+const defaultOnError = (error: unknown) => {
+  console.error(error)
+  if (error instanceof Error) {
+    toast({
+      content: 'Conversion error: ' + error.message,
+      type: 'error',
+    })
+    return
+  }
+
+  toast({
+    content: 'Unknown conversion error',
+    type: 'error',
+  })
+}
+
+export function useConvert({
+  convertionFunction,
+  onDone,
+  onError = defaultOnError,
+}: UseConvertProps) {
   const [isLoading, setLoading] = useState<boolean>(false)
   const { download } = useDownload()
 
@@ -23,11 +45,16 @@ export function useConvert({ convertionFunction, onDone }: UseConvertProps) {
           download(convertedFiles)
         })
         .then(() => {
-          setLoading(false)
           onDone?.()
         })
+        .catch((error) => {
+          onError(error)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
     },
-    [onDone, convertionFunction, download]
+    [onDone, onError, convertionFunction, download]
   )
 
   return {
