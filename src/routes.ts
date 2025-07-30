@@ -27,5 +27,6 @@ export default [
     // Audio
     route('/to-m4a', 'routes/converters/audio/to-m4a.tsx'),
     route('/to-mp3', 'routes/converters/audio/to-mp3.tsx'),
+    route('/to-ogg', 'routes/converters/audio/to-ogg.tsx'),
   ]),
 ] satisfies RouteConfig
