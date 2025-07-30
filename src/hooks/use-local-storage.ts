@@ -47,23 +47,23 @@ const IS_SERVER = typeof window === 'undefined'
 export function useLocalStorage<T>(
   key: string,
   initialValue: T | (() => T),
-  options: UseLocalStorageOptions<T> = {},
+  options: UseLocalStorageOptions<T> = {}
 ): [T, Dispatch<SetStateAction<T>>, () => void] {
   const { initializeWithValue = true } = options
 
   const serializer = useCallback<(value: T) => string>(
-    value => {
+    (value) => {
       if (options.serializer) {
         return options.serializer(value)
       }
 
       return JSON.stringify(value)
     },
-    [options],
+    [options]
   )
 
   const deserializer = useCallback<(value: string) => T>(
-    value => {
+    (value) => {
       if (options.deserializer) {
         return options.deserializer(value)
       }
@@ -85,7 +85,7 @@ export function useLocalStorage<T>(
 
       return parsed as T
     },
-    [options, initialValue],
+    [options, initialValue]
   )
 
   // Get from local storage then
@@ -118,11 +118,11 @@ export function useLocalStorage<T>(
 
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue: Dispatch<SetStateAction<T>> = useEventCallback(value => {
+  const setValue: Dispatch<SetStateAction<T>> = useEventCallback((value) => {
     // Prevent build error "window is undefined" but keeps working
     if (IS_SERVER) {
       console.warn(
-        `Tried setting localStorage key “${key}” even though environment is not a client`,
+        `Tried setting localStorage key “${key}” even though environment is not a client`
       )
     }
 
@@ -147,7 +147,7 @@ export function useLocalStorage<T>(
     // Prevent build error "window is undefined" but keeps working
     if (IS_SERVER) {
       console.warn(
-        `Tried removing localStorage key “${key}” even though environment is not a client`,
+        `Tried removing localStorage key “${key}” even though environment is not a client`
       )
     }
 
@@ -176,7 +176,7 @@ export function useLocalStorage<T>(
       }
       setStoredValue(readValue())
     },
-    [key, readValue],
+    [key, readValue]
   )
 
   // this only works for other documents, not the current one
