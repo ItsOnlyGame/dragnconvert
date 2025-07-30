@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Drag 'n' Convert</title>
+        <title>{"Drag 'n' Convert"}</title>
         <meta property="og:title" content="Drag 'n' Convert" />
         <meta
           name="description"

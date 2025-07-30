@@ -16,13 +16,18 @@ type FileListProps = {
   setAcceptedFiles: Dispatch<SetStateAction<File[]>>
 }
 export function FileList({ files, setAcceptedFiles }: FileListProps) {
-  const handleRemove = useCallback((fileToRemove: File) => {
-    setAcceptedFiles((prev) => prev.filter((f) => f.name !== fileToRemove.name))
-  }, [])
+  const handleRemove = useCallback(
+    (fileToRemove: File) => {
+      setAcceptedFiles((prev) =>
+        prev.filter((f) => f.name !== fileToRemove.name)
+      )
+    },
+    [setAcceptedFiles]
+  )
 
   const handleRemoveAll = useCallback(() => {
     setAcceptedFiles([])
-  }, [])
+  }, [setAcceptedFiles])
 
   return (
     <div className="relative flex max-w-md flex-col items-start rounded-xl border pb-6">

@@ -26,7 +26,7 @@ export function FileDropzone({ setAcceptedFiles, accept }: FileDropzoneProps) {
 
       setAcceptedFiles(acceptedFiles)
     },
-    []
+    [setAcceptedFiles]
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -49,7 +49,7 @@ export function FileDropzone({ setAcceptedFiles, accept }: FileDropzoneProps) {
           <p className="text-stone-400">Drop the files here ...</p>
         ) : (
           <div className="space-y-2 text-center text-stone-400">
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p>{"Drag 'n' drop"} some files here, or click to select files</p>
             <p className="text-sm">{acceptedFileTypes}</p>
           </div>
         )}

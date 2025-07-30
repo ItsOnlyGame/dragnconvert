@@ -11,7 +11,7 @@ async function download(files: ConvertedFile[] | undefined) {
     FileSaver.saveAs(files[0].blob, files[0].filename)
     return
   } else {
-    var zip = new JSZip()
+    const zip = new JSZip()
 
     for (const file of files) {
       zip.file(file.filename, file.blob)
