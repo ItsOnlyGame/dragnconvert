@@ -69,7 +69,7 @@ export function useFFmpeg() {
 
     return {
       blob: new Blob([data as Buffer]),
-      filename: outputFile,
+      filename: `${outputFile}.${outputFormat}`,
     }
   }
 
