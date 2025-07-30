@@ -8,27 +8,27 @@ export default function RouteComponent() {
 
   const { convert, isLoading } = useConvert({
     convertionFunction: async (file) =>
-      await ffmpeg.convert(file, 'mp4', 'video'),
+      await ffmpeg.convert(file, 'ogv', 'video'),
   })
 
   return (
     <>
       <PageMeta
-        title="Convert to MP4"
-        description="Convert video to MP4 format."
+        title="Convert to OGV"
+        description="Convert audio and video to OGV format."
       />
 
-      <h2 className="text-bold text-2xl">Convert to MP4</h2>
+      <h2 className="text-bold text-2xl">Convert to OGV</h2>
       <FileConvert
         handleConvert={convert}
         isLoading={isLoading}
         accept={{
+          'video/mp4': ['.mp4'],
           'video/mkv': ['.mkv'],
           'video/webm': ['.webm'],
           'video/mov': ['.mov'],
           'video/avi': ['.avi'],
           'video/flv': ['.flv'],
-          'video/ogv': ['.ogv'],
         }}
       />
     </>

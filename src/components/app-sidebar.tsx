@@ -39,6 +39,7 @@ const items: SidebarCategory[] = [
       { title: 'Convert to AVI', url: '/to-avi' },
       { title: 'Convert to MOV', url: '/to-mov' },
       { title: 'Convert to WebM', url: '/to-webm' },
+      { title: 'Convert to OGV', url: '/to-ogv' },
     ],
   },
   {

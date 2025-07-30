@@ -28,6 +28,7 @@ export default function RouteComponent() {
           'video/mov': ['.mov'],
           'video/avi': ['.avi'],
           'video/flv': ['.flv'],
+          'video/ogv': ['.ogv'],
         }}
       />
     </>

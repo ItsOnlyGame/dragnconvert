@@ -29,10 +29,10 @@ export default function RouteComponent() {
           'video/mov': ['.mov'],
           'video/avi': ['.avi'],
           'video/flv': ['.flv'],
+          'video/ogv': ['.ogv'],
 
           'audio/mp3': ['.mp3'],
           'audio/ogg': ['.ogg'],
-          'audio/ogv': ['.ogv'],
           'audio/wav': ['.wav'],
         }}
       />

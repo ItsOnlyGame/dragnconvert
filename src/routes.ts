@@ -23,6 +23,7 @@ export default [
     route('/to-avi', 'routes/converters/video/to-avi.tsx'),
     route('/to-mov', 'routes/converters/video/to-mov.tsx'),
     route('/to-webm', 'routes/converters/video/to-webm.tsx'),
+    route('/to-ogv', 'routes/converters/video/to-ogv.tsx'),
 
     // Audio
     route('/to-m4a', 'routes/converters/audio/to-m4a.tsx'),
