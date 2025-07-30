@@ -1,7 +1,9 @@
 import {
   FileQuestionMarkIcon,
   ImageIcon,
+  MusicIcon,
   Trash2Icon,
+  VideoIcon,
   XIcon,
 } from 'lucide-react'
 import { useCallback, useMemo, type Dispatch, type SetStateAction } from 'react'
@@ -78,6 +80,10 @@ function ItemIcon({ file }: ItemIconProps) {
     switch (ext) {
       case 'image':
         return ImageIcon
+      case 'video':
+        return VideoIcon
+      case 'audio':
+        return MusicIcon
       default:
         return FileQuestionMarkIcon
     }
