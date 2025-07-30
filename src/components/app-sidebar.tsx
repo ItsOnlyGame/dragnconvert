@@ -10,6 +10,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '~/components/ui/sidebar'
+import { useMediaQuery } from '~/hooks/use-media-query'
 
 type LinkItems = {
   [category: string]: {
@@ -50,7 +51,14 @@ const items: LinkItems = {
 }
 
 export function AppSidebar() {
+  const isMobile = useMediaQuery('(max-width: 768px)')
   const { toggleSidebar } = useSidebar()
+
+  const handleLinkClick = () => {
+    if (isMobile) {
+      toggleSidebar()
+    }
+  }
 
   return (
     <Sidebar>
@@ -62,7 +70,7 @@ export function AppSidebar() {
               {items.main.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link onClick={toggleSidebar} to={item.url}>
+                    <Link onClick={handleLinkClick} to={item.url}>
                       {item.title}
                     </Link>
                   </SidebarMenuButton>
@@ -79,7 +87,7 @@ export function AppSidebar() {
               {items.converters.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link onClick={toggleSidebar} to={item.url}>
+                    <Link onClick={handleLinkClick} to={item.url}>
                       {item.title}
                     </Link>
                   </SidebarMenuButton>
