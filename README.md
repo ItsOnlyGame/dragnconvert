@@ -23,3 +23,6 @@ This app is a simple drag and drop file converter. It allows you to drag a file 
 2. Run `pnpm install`.
 3. Run `pnpm dev`.
 
+## LICENSE
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
