@@ -23,14 +23,20 @@ const items: SidebarCategory[] = [
     items: [{ title: 'Home', url: '/' }],
   },
   {
-    title: 'Converters',
+    title: 'Images',
     items: [
       { title: 'Convert to PNG', url: '/to-png' },
       { title: 'Convert to JPG', url: '/to-jpg' },
       { title: 'Convert to WebP', url: '/to-webp' },
-      { title: 'Convert to MP4', url: '/to-mp4' },
-      { title: 'Convert to MP3', url: '/to-mp3' },
     ],
+  },
+  {
+    title: 'Video',
+    items: [{ title: 'Convert to MP4', url: '/to-mp4' }],
+  },
+  {
+    title: 'Audio',
+    items: [{ title: 'Convert to MP3', url: '/to-mp3' }],
   },
 ]
 
