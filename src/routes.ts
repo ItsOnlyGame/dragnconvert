@@ -21,6 +21,7 @@ export default [
     route('/to-mkv', 'routes/converters/video/to-mkv.tsx'),
     route('/to-flv', 'routes/converters/video/to-flv.tsx'),
     route('/to-avi', 'routes/converters/video/to-avi.tsx'),
+    route('/to-mov', 'routes/converters/video/to-mov.tsx'),
 
     // Audio
     route('/to-mp3', 'routes/converters/audio/to-mp3.tsx'),
