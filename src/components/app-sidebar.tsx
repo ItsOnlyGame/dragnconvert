@@ -1,3 +1,5 @@
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import { HomeIcon, ImageIcon, MusicIcon, VideoIcon } from 'lucide-react'
 import { Link, type Register } from 'react-router'
 import {
   Sidebar,
@@ -12,18 +14,36 @@ import {
 } from '~/components/ui/sidebar'
 import { useMediaQuery } from '~/hooks/use-media-query'
 
+type SidebarCategoryItem =
+  | {
+      title: string
+      icon?: ReactNode
+      external?: false
+      url: keyof Register['pages']
+    }
+  | {
+      title: string
+      icon?: ReactNode
+      external: true
+      href: string
+    }
 type SidebarCategory = {
   title: string
-  items: { title: string; url: keyof Register['pages'] }[]
+  icon?: ReactNode
+  items: SidebarCategoryItem[]
 }
+
 // Menu items.
 const items: SidebarCategory[] = [
   {
     title: 'Drag ‘n’ Convert',
-    items: [{ title: 'Home', url: '/' }],
+    items: [
+      { title: 'Home', icon: <HomeIcon />, url: '/' },
+    ],
   },
   {
     title: 'Images',
+    icon: <ImageIcon />,
     items: [
       { title: 'Convert to PNG', url: '/to-png' },
       { title: 'Convert to JPG', url: '/to-jpg' },
@@ -32,6 +52,7 @@ const items: SidebarCategory[] = [
   },
   {
     title: 'Video',
+    icon: <VideoIcon />,
     items: [
       { title: 'Convert to MP4', url: '/to-mp4' },
       { title: 'Convert to MKV', url: '/to-mkv' },
@@ -44,6 +65,7 @@ const items: SidebarCategory[] = [
   },
   {
     title: 'Audio',
+    icon: <MusicIcon />,
     items: [
       { title: 'Convert to M4A', url: '/to-m4a' },
       { title: 'Convert to MP3', url: '/to-mp3' },
@@ -68,13 +90,20 @@ export function AppSidebar() {
       <SidebarContent>
         {items.map((category) => (
           <SidebarGroup key={category.title}>
-            <SidebarGroupLabel>{category.title}</SidebarGroupLabel>
+            <SidebarGroupLabel className="flex flex-row gap-1">
+              {category.icon ?? null}
+              {category.title}
+            </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {category.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <Link onClick={handleLinkClick} to={item.url}>
+                      <Link
+                        onClick={handleLinkClick}
+                        to={item.external ? item.href : item.url}
+                      >
+                        {item.icon ?? null}
                         {item.title}
                       </Link>
                     </SidebarMenuButton>
