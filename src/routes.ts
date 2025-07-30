@@ -19,6 +19,7 @@ export default [
     // Video
     route('/to-mp4', 'routes/converters/convert-to-mp4.tsx'),
     route('/to-mkv', 'routes/converters/convert-to-mkv.tsx'),
+    route('/to-flv', 'routes/converters/convert-to-flv.tsx'),
 
     // Audio
     route('/to-mp3', 'routes/converters/convert-to-mp3.tsx'),
