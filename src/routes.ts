@@ -25,6 +25,7 @@ export default [
     route('/to-webm', 'routes/converters/video/to-webm.tsx'),
 
     // Audio
+    route('/to-m4a', 'routes/converters/audio/to-m4a.tsx'),
     route('/to-mp3', 'routes/converters/audio/to-mp3.tsx'),
   ]),
 ] satisfies RouteConfig

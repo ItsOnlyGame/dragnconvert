@@ -43,7 +43,10 @@ const items: SidebarCategory[] = [
   },
   {
     title: 'Audio',
-    items: [{ title: 'Convert to MP3', url: '/to-mp3' }],
+    items: [
+      { title: 'Convert to M4A', url: '/to-m4a' },
+      { title: 'Convert to MP3', url: '/to-mp3' },
+    ],
   },
 ]
 

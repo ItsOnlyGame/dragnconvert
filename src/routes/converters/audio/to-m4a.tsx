@@ -8,17 +8,17 @@ export default function RouteComponent() {
 
   const { convert, isLoading } = useConvert({
     convertionFunction: async (file) =>
-      await ffmpeg.convert(file, 'mp3', 'audio'),
+      await ffmpeg.convert(file, 'm4a', 'audio'),
   })
 
   return (
     <>
       <PageMeta
-        title="Convert to MP3"
-        description="Convert audio and video to MP3 format."
+        title="Convert to M4A"
+        description="Convert audio and video to M4A format."
       />
 
-      <h2 className="text-bold text-2xl">Convert to MP3</h2>
+      <h2 className="text-bold text-2xl">Convert to M4A</h2>
       <FileConvert
         handleConvert={convert}
         isLoading={isLoading}
@@ -30,7 +30,7 @@ export default function RouteComponent() {
           'video/avi': ['.avi'],
           'video/flv': ['.flv'],
 
-          'audio/m4a': ['.m4a'],
+          'audio/mp3': ['.mp3'],
           'audio/ogg': ['.ogg'],
           'audio/ogv': ['.ogv'],
           'audio/wav': ['.wav'],
