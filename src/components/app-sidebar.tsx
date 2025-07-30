@@ -1,5 +1,6 @@
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import { HomeIcon, ImageIcon, MusicIcon, VideoIcon } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { Link, type Register } from 'react-router'
 import {
   Sidebar,
@@ -39,6 +40,12 @@ const items: SidebarCategory[] = [
     title: 'Drag ‘n’ Convert',
     items: [
       { title: 'Home', icon: <HomeIcon />, url: '/' },
+      {
+        title: 'Github',
+        icon: <SiGithub />,
+        external: true,
+        href: 'https://github.com/ItsOnlyGame/dragnconvert',
+      },
     ],
   },
   {
