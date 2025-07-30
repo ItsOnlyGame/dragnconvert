@@ -8,10 +8,14 @@ This app is a simple drag and drop file converter. It allows you to drag a file 
 
 - Convert files to multiple file formats.
   - Images: PNG, JPG, WEBP
-  - Video: MP4
-  - Audio: MP3
+  - Video: MP4, AVI, MKV, MOV, WEBM, FLV, OGV
+  - Audio: MP3, WAV, OGG, M4A
 
-- More formats coming soon.
+- All conversions are done in the browser
+  - Powered by [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) and browser APIs
+- No file is uploaded to the server
+- Supports drag and drop
+- Supports multiple files at once
 
 ## Getting started
 
