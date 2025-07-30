@@ -20,5 +20,6 @@ This app is a simple drag and drop file converter. It allows you to drag a file 
 ## Getting started
 
 1. Clone the repository.
-2. Run `npm install`.
-3. Run `npm run dev`.
+2. Run `pnpm install`.
+3. Run `pnpm dev`.
+
