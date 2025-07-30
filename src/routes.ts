@@ -12,16 +12,16 @@ export default [
     index('routes/index.tsx'),
 
     // Image
-    route('/to-jpg', 'routes/converters/to-jpg.tsx'),
-    route('/to-png', 'routes/converters/to-png.tsx'),
-    route('/to-webp', 'routes/converters/to-webp.tsx'),
+    route('/to-jpg', 'routes/converters/image/to-jpg.tsx'),
+    route('/to-png', 'routes/converters/image/to-png.tsx'),
+    route('/to-webp', 'routes/converters/image/to-webp.tsx'),
 
     // Video
-    route('/to-mp4', 'routes/converters/to-mp4.tsx'),
-    route('/to-mkv', 'routes/converters/to-mkv.tsx'),
-    route('/to-flv', 'routes/converters/to-flv.tsx'),
+    route('/to-mp4', 'routes/converters/video/to-mp4.tsx'),
+    route('/to-mkv', 'routes/converters/video/to-mkv.tsx'),
+    route('/to-flv', 'routes/converters/video/to-flv.tsx'),
 
     // Audio
-    route('/to-mp3', 'routes/converters/to-mp3.tsx'),
+    route('/to-mp3', 'routes/converters/audio/to-mp3.tsx'),
   ]),
 ] satisfies RouteConfig
