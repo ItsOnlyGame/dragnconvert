@@ -42,7 +42,7 @@ export function FileDropzone({ setAcceptedFiles, accept }: FileDropzoneProps) {
     <div className="flex h-full max-h-[200px] flex-col gap-4">
       <div
         {...getRootProps()}
-        className="flex h-full w-full flex-col items-center justify-center rounded-lg border-3 border-dashed border-stone-800 bg-stone-900/50 p-4"
+        className="flex h-full min-h-[200px] w-full min-w-md flex-col items-center justify-center rounded-lg border-3 border-dashed border-stone-800 bg-stone-900/50 p-4"
       >
         <input {...getInputProps()} />
         {isDragActive ? (

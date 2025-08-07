@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '~/components/ui/sidebar'
-import { useMediaQuery } from '~/hooks/use-media-query'
+import { useIsMobile } from '~/hooks/use-mobile'
 
 type SidebarCategoryItem =
   | {
@@ -83,7 +83,7 @@ const items: SidebarCategory[] = [
 ]
 
 export function AppSidebar() {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useIsMobile()
   const { toggleSidebar } = useSidebar()
 
   const handleLinkClick = () => {

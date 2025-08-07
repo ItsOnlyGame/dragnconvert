@@ -1,7 +1,7 @@
 import { Loader2Icon } from 'lucide-react'
 import { useState, type PropsWithChildren } from 'react'
 import type { Accept } from 'react-dropzone'
-import { useMediaQuery } from '~/hooks/use-media-query'
+import { useIsMobile } from '~/hooks/use-mobile'
 import { Button } from '../ui/button'
 import { FileDropzone } from './file-dropzone'
 import { FileList } from './file-list'
@@ -17,7 +17,7 @@ export function FileConvert({
   isLoading,
   accept,
 }: FileConvertProps) {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useIsMobile()
   const [acceptedFiles, setAcceptedFiles] = useState<File[]>([])
 
   if (isMobile) {
